@@ -1,0 +1,4 @@
+ScreenFeel installers are published as release assets, never committed.
+*.exe
+*.appx
+*.msix
