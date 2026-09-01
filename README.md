@@ -17,9 +17,31 @@ without an account; signing in switches on the AI lenses.
 ### Installing
 
 The installer is not yet signed through the Microsoft Store, so Windows
-SmartScreen may warn once about an unrecognised app. Choose **More info**,
-then **Run anyway**. It installs for the current user only — no admin prompt —
-and adds a Start menu and desktop shortcut.
+SmartScreen shows a warning naming an **Unknown Publisher** — either
+"Windows protected your PC" (choose **More info**, then **Run anyway**) or,
+when SmartScreen cannot be reached, a dialog offering **Run** directly. This
+is expected for a new unsigned installer and disappears once ScreenFeel
+ships through the Microsoft Store. It installs for the current user only —
+no admin prompt — and adds a Start menu and desktop shortcut.
+
+### Verifying your download
+
+Every release includes a `SHA256SUMS.txt` next to the installer. To check
+that the file you downloaded is the file we published:
+
+```powershell
+Get-FileHash ScreenFeel-Setup.exe -Algorithm SHA256
+```
+
+The hash must match the one in `SHA256SUMS.txt` on the same release. If it
+does not, delete the file and download again from
+[screenfeel.app/download](https://screenfeel.app/download).
+
+For security teams: the installer elevates nothing (per-user install, no UAC
+prompt), the app reaches exactly one host (`screenfeel.app`), and it contains
+no third-party scripts, analytics or trackers. The privacy policy at
+[screenfeel.app/privacy](https://screenfeel.app/privacy) states what leaves
+the device and when.
 
 ### What it does
 
